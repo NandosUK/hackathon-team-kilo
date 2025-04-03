@@ -13,14 +13,14 @@ import type { GameConfig } from "@/types/game-types"
 export default function Game() {
   // Game configuration - adjusted for the new pixel art layout
   const gameConfig: GameConfig = {
-    startPosition: { x: 250, y: 340 }, // Adjusted position
+    startPosition: { x: 250, y: 330 }, // Adjusted position
     bins: [
       { type: "paper", x: 510, y: 340, width: 80, height: 80, number: 1 },
       { type: "glass", x: 510, y: 460, width: 80, height: 80, number: 2 },
       { type: "food", x: 510, y: 520, width: 80, height: 80, number: 3 },
       { type: "general", x: 510, y: 700, width: 80, height: 80, number: 4 },
     ],
-    conveyorBelts: [{ id: 1, x: 150, y: 480, width: 300, direction: "right", speed: 1.5 }],
+    conveyorBelts: [{ id: 1, x: 150, y: 450, width: 300, direction: "right", speed: 1.5 }],
     initialBeltSpeed: 1.5,
     gameTime: 60,
   }
