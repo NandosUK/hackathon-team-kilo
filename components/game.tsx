@@ -107,15 +107,15 @@ export default function Game() {
               <h3 className="font-bold mb-2 text-xl text-center">How to Play:</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Items move along the conveyor belt, getting faster over time</li>
-                <li>Press number keys 1-4 to sort waste into the correct bins:</li>
-                <li className="ml-4">- 1: Paper (newspapers, cardboard)</li>
-                <li className="ml-4">- 2: Glass (bottles, jars)</li>
-                <li className="ml-4">- 3: Food (organic waste)</li>
-                <li className="ml-4">- 4: General (non-recyclable items)</li>
-                <li>+10 points for correct sorting</li>
-                <li>-5 points for incorrect sorting</li>
-                <li>-10 points if an item falls off the end of the belt</li>
-                <li>£0.50 fine for each incorrect sort or missed item</li>
+                <li>Press number keys <span className="font-bold">1️⃣-4️⃣</span> to sort waste into the correct bins:</li>
+                <li className="ml-4 list-none"> <span className="font-bold">1️⃣</span> Paper (newspapers, cardboard)</li>
+                <li className="ml-4 list-none"> <span className="font-bold">2️⃣</span> Glass (bottles, jars)</li>
+                <li className="ml-4 list-none"> <span className="font-bold">3️⃣</span> Food (organic waste)</li>
+                <li className="ml-4 list-none"> <span className="font-bold">4️⃣</span> General (non-recyclable items)</li>
+                <li><span className="text-green-600 font-bold"> +10 points</span> for correct sorting</li>
+                <li><span className="text-red-600 font-bold"> -5 points</span> for incorrect sorting</li>
+                <li><span className="text-red-600 font-bold"> -10 points</span> if an item falls off the end of the belt</li>
+                <li><span className="text-red-600 font-bold"> £0.50 fine</span> for each incorrect sort or missed item</li>
               </ul>
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function Game() {
           )}
 
           {/* Render character */}
-          <Character x={gameState.characterPosition.x} y={gameState.characterPosition.y} holdingItem={false} />
+          <Character x={gameState.characterPosition.x} y={gameState.characterPosition.y} holdingItem={gameState.characterPosition.y != gameConfig.startPosition.y} />
 
           {/* Render current item on belt */}
           {gameState.currentItem && <WasteItem item={gameState.currentItem} />}
