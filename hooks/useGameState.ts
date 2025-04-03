@@ -1,9 +1,12 @@
 "use client"
 
+
 import { useState, useRef, useCallback, useEffect } from "react"
 import { useToast } from "@/hooks/use-toast"
 import type { WasteType, WasteItemType, SortingRecord, GameConfig } from "@/types/game-types"
-import { correctSound, wrongSound } from "@/lib/sounds"
+
+
+
 
 export function useGameState(config: GameConfig) {
   const { toast } = useToast()
@@ -94,7 +97,7 @@ export function useGameState(config: GameConfig) {
 
       // Update score
       if (isCorrect) {
-        correctSound.play();
+        new Audio('/sounds/correct-2.mp3').play();
         setScore((prev) => prev + 10)
         toast({
           title: "Correct!",
@@ -102,7 +105,7 @@ export function useGameState(config: GameConfig) {
           variant: "success",
         })
       } else {
-        wrongSound.play();
+        new Audio('/sounds/wrong-1.mp3').play();
         setScore((prev) => Math.max(0, prev - 5))
         showPenalty(0.5) // 50p fine for incorrect sorting
 

@@ -31,7 +31,7 @@ export default function WasteItem({ item, isDropping = false, itemImage }: Waste
 
 
   const getItemIcon = () => {
-    return <img src={image} alt="Item Icon" className="w-full h-full object-contain" />
+    return <img src={image} alt="Item Icon" className="w-full h-full object-contain z-50 " />
   }
 
   return (

@@ -5,7 +5,6 @@ import type React from "react"
 import { useEffect } from "react"
 import { useToast } from "@/hooks/use-toast"
 import type { WasteItemType } from "@/types/game-types"
-import { missedSound } from "@/lib/sounds"
 
 interface GameLoopProps {
   gameStarted: boolean
@@ -78,7 +77,7 @@ export function useGameLoop({
 
       // Check if item has completely passed the right edge of the belt
       if (newX > belt.x + belt.width + 320) {
-        missedSound.play();
+        new Audio('/sounds/fast-boo.mp3').play();
 
         // Apply penalty for missed item
         showPenalty(0.5) // 50p fine for missed item
