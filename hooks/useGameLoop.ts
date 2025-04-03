@@ -77,7 +77,7 @@ export function useGameLoop({
       const newX = currentItem.x + beltSpeed * 3 // Move based on current belt speed
 
       // Check if item has completely passed the right edge of the belt
-      if (newX > belt.x + belt.width + 200) {
+      if (newX > belt.x + belt.width + 320) {
         missedSound.play();
 
         // Apply penalty for missed item

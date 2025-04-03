@@ -13,7 +13,7 @@ import type { GameConfig } from "@/types/game-types"
 export default function Game() {
   // Game configuration - adjusted for the new pixel art layout
   const gameConfig: GameConfig = {
-    startPosition: { x: 250, y: 380 }, // Adjusted position
+    startPosition: { x: 250, y: 340 }, // Adjusted position
     bins: [
       { type: "paper", x: 510, y: 340, width: 80, height: 80, number: 1 },
       { type: "glass", x: 510, y: 460, width: 80, height: 80, number: 2 },
