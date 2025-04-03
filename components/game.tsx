@@ -148,7 +148,7 @@ export default function Game() {
           )}
 
           {/* Render character */}
-          <Character x={gameState.characterPosition.x} y={gameState.characterPosition.y} holdingItem={false} />
+          <Character x={gameState.characterPosition.x} y={gameState.characterPosition.y} holdingItem={gameState.characterPosition.y != gameConfig.startPosition.y} />
 
           {/* Render current item on belt */}
           {gameState.currentItem && <WasteItem item={gameState.currentItem} />}
